@@ -3,9 +3,9 @@ import { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
 export const lambdaHandler = async (
   event: APIGatewayProxyEvent
 ): Promise<APIGatewayProxyResult> => {
-  const queries = JSON.stringify(event.queryStringParameters);
+  console.log("Request Body: ", event.body);
   return {
     statusCode: 200,
-    body: `Test parameters Queries: ${queries}`,
+    body: event.body,
   };
 };

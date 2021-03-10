@@ -7,18 +7,27 @@
   "author": "SAM CLI",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "clean": "^4.0.2"
   },
   "scripts": {
     "test": "mocha tests/unit/",
-    "compile": "tsc"
+    "clean": "rimraf dist && rimraf release",
+    "build": "npm run clean && tsc -p .",
+    "postbuild": "cp package.json dist/package.json && cd dist && npm install --only=production",
+    "upload": "mkdir release && zip -r hello-world.zip dist/** && mv hello-world.zip release"
   },
   "devDependencies": {
-    "aws-sdk": "^2.655.0",
     "@types/aws-lambda": "^8.10.51",
     "@types/node": "^13.13.5",
-    "typescript": "^3.8.3",
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
+    "aws-sdk": "^2.655.0",
     "chai": "^4.2.0",
-    "mocha": "^8.2.1"
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "mocha": "^8.2.1",
+    "typescript": "^3.8.3"
   }
 }

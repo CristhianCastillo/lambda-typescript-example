@@ -1,13 +1,14 @@
 {
+  "exclude": ["node_modules", "**/*.spec.ts"],
   "compilerOptions": {
+    "baseUrl": "./",
     "module": "CommonJS",
     "target": "ES2017",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
-    "outDir": "./built",
+    "outDir": "./dist",
     "sourceMap": true
   },
-  "include": ["src-ts/**/*", "hello-world"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "include": ["src-ts/**/*", "hello-world", "app.ts"]
 }

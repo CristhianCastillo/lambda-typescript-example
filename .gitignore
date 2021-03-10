@@ -124,6 +124,9 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.lock.hcl
 
 # End of https://www.gitignore.io/api/osx,node,linux,windows
